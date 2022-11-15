@@ -1,4 +1,4 @@
-package com.ista.springboot.web.app;
+package com.ista.dulceria.dulce.estrella.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
