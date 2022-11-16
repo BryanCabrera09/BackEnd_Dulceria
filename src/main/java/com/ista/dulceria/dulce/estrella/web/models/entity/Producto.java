@@ -1,47 +1,52 @@
 package com.ista.dulceria.dulce.estrella.web.models.entity;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "productos")
-public class Producto implements Serializable {
+public class Producto {
 
-	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "producto_id")
 	private Long id_producto;
-
-	private String categoria_id;
-	private String producto;
-	private String codigo_p;
-	private String u_caja;
-	private String precio_detalle;
-	private String precio_mayorista;
-	private String estado;
-	private String pvp;
+	
+	private String codigo_producto;
+	private String nombre_producto;
+	private Long u_caja;
+	private Long precio_mayorista;
+	private Long precio_detalle;
+	private Long pvp;
+	private Boolean estado;
 	private String imagen;
+	
+	@ManyToOne
+	@JoinColumn(name="id_categoria")
+	private Categoria id_categoria;
 
-	public Producto(String categoria_id, String producto, String codigo_p, String u_caja, String precio_detalle,
-			String precio_mayorista, String estado, String pvp, String imagen) {
+	public Producto() {
+		super();
+	}
 
-		this.categoria_id = categoria_id;
-		this.producto = producto;
-		this.codigo_p = codigo_p;
+	public Producto(String codigo_producto, String nombre_producto, Long u_caja, Long precio_mayorista,
+			Long precio_detalle, Long pvp, Boolean estado, String imagen, Categoria id_categoria) {
+		super();
+		this.codigo_producto = codigo_producto;
+		this.nombre_producto = nombre_producto;
 		this.u_caja = u_caja;
-		this.precio_detalle = precio_detalle;
 		this.precio_mayorista = precio_mayorista;
-		this.estado = estado;
+		this.precio_detalle = precio_detalle;
 		this.pvp = pvp;
+		this.estado = estado;
 		this.imagen = imagen;
+		this.id_categoria = id_categoria;
 	}
 
 	public Long getId_producto() {
@@ -52,68 +57,60 @@ public class Producto implements Serializable {
 		this.id_producto = id_producto;
 	}
 
-	public String getCategoria_id() {
-		return categoria_id;
+	public String getCodigo_producto() {
+		return codigo_producto;
 	}
 
-	public void setCategoria_id(String categoria_id) {
-		this.categoria_id = categoria_id;
+	public void setCodigo_producto(String codigo_producto) {
+		this.codigo_producto = codigo_producto;
 	}
 
-	public String getProducto() {
-		return producto;
+	public String getNombre_producto() {
+		return nombre_producto;
 	}
 
-	public void setProducto(String producto) {
-		this.producto = producto;
+	public void setNombre_producto(String nombre_producto) {
+		this.nombre_producto = nombre_producto;
 	}
 
-	public String getCodigo_p() {
-		return codigo_p;
-	}
-
-	public void setCodigo_p(String codigo_p) {
-		this.codigo_p = codigo_p;
-	}
-
-	public String getU_caja() {
+	public Long getU_caja() {
 		return u_caja;
 	}
 
-	public void setU_caja(String u_caja) {
+	public void setU_caja(Long u_caja) {
 		this.u_caja = u_caja;
 	}
 
-	public String getPrecio_detalle() {
-		return precio_detalle;
-	}
-
-	public void setPrecio_detalle(String precio_detalle) {
-		this.precio_detalle = precio_detalle;
-	}
-
-	public String getPrecio_mayorista() {
+	public Long getPrecio_mayorista() {
 		return precio_mayorista;
 	}
 
-	public void setPrecio_mayorista(String precio_mayorista) {
+	public void setPrecio_mayorista(Long precio_mayorista) {
 		this.precio_mayorista = precio_mayorista;
 	}
 
-	public String getEstado() {
-		return estado;
+	public Long getPrecio_detalle() {
+		return precio_detalle;
 	}
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setPrecio_detalle(Long precio_detalle) {
+		this.precio_detalle = precio_detalle;
 	}
 
-	public String getPvp() {
+	public Long getPvp() {
 		return pvp;
 	}
 
-	public void setPvp(String pvp) {
+	public void setPvp(Long pvp) {
 		this.pvp = pvp;
+	}
+
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
 	}
 
 	public String getImagen() {
@@ -123,5 +120,16 @@ public class Producto implements Serializable {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
+
+	public Categoria getId_categoria() {
+		return id_categoria;
+	}
+
+	public void setId_categoria(Categoria id_categoria) {
+		this.id_categoria = id_categoria;
+	}
+
+	
+
 
 }
