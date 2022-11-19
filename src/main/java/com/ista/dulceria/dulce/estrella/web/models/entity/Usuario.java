@@ -23,7 +23,6 @@ public class Usuario {
 	}
 
 	public Usuario(String cedula, String nombres, String username, String contrasenia, Boolean estado, Set<UsuarioRol> usuarioRoles, Persona persona, Empresa empresa) {
-		this.id_usuario = id_usuario;
 		this.cedula = cedula;
 		this.nombres = nombres;
 		this.username = username;

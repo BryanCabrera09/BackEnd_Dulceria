@@ -25,7 +25,6 @@ public class UsuarioRol {
 	}
 
 	public UsuarioRol(Usuario usuario, Rol rol) {
-		this.id_usuario_rol = id_usuario_rol;
 		this.usuario = usuario;
 		this.rol = rol;
 	}

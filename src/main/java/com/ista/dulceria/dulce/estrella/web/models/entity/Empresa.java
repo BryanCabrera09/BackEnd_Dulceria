@@ -25,7 +25,54 @@ public class Empresa {
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "empresa")
 	private Set<Usuario> usuario = new HashSet<>();
+	
+	
+
+	public Empresa() {
+		super();
+	}
 
 
+	public Empresa(String nombre, String ruc, Set<Usuario> usuario) {
+		super();
+		this.nombre = nombre;
+		this.ruc = ruc;
+		this.usuario = usuario;
+	}
+
+
+	public Long getId_empresa() {
+		return id_empresa;
+	}
+
+
+	public void setId_empresa(Long id_empresa) {
+		this.id_empresa = id_empresa;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getRuc() {
+		return ruc;
+	}
+
+
+	public void setRuc(String ruc) {
+		this.ruc = ruc;
+	}
+
+
+
+
+	
 
 }

@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import java.util.HashSet;
 import java.util.Set;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
