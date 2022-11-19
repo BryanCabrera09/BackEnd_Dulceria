@@ -26,6 +26,6 @@ public class Empresa {
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "empresa")
 	private Set<Usuario> usuario = new HashSet<>();
 
-	
+
 
 }
