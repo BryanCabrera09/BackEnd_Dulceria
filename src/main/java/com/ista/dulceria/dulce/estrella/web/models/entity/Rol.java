@@ -27,6 +27,53 @@ public class Rol {
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "rol")
 	private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
-	
+	public Rol() {
+	}
 
+	public Rol(String nombre_rol, String descripcion, Boolean estado, Set<UsuarioRol> usuarioRoles) {
+		this.nombre_rol = nombre_rol;
+		this.descripcion = descripcion;
+		this.estado = estado;
+		this.usuarioRoles = usuarioRoles;
+	}
+
+	public Long getId_rol() {
+		return id_rol;
+	}
+
+	public void setId_rol(Long id_rol) {
+		this.id_rol = id_rol;
+	}
+
+	public String getNombre_rol() {
+		return nombre_rol;
+	}
+
+	public void setNombre_rol(String nombre_rol) {
+		this.nombre_rol = nombre_rol;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+
+	public Set<UsuarioRol> getUsuarioRoles() {
+		return usuarioRoles;
+	}
+
+	public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
+		this.usuarioRoles = usuarioRoles;
+	}
 }
