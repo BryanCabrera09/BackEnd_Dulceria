@@ -1,5 +1,6 @@
 package com.ista.dulceria.dulce.estrella.web.models.entity;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,19 +14,30 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Empresa")
-public class Empresa {
+@Table(name = "Persona")
+public class Persona {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_empresa;
+	private Long id_persona;
 	
-	private String nombre;
-	private String ruc;
+	private String cedula;
+	private String nombres;
+	private String apellidos;
+	private String genero;
+	private String correo;
+	private String telefono;
+	private String direccion;
+	private Date fechaNacimiento;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "empresa")
+	
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "persona")
 	private Set<Usuario> usuario = new HashSet<>();
-
-
+	
+	
+	
+	
+	
+	
 
 }
