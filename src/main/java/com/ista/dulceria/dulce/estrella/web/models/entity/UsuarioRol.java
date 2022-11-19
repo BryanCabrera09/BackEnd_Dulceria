@@ -15,12 +15,13 @@ public class UsuarioRol {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_usuario_rol;
 	
-
-	@ManyToMany(fetch = FetchType.EAGER)
-	private Usuario id_usuario;
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Usuario usuario;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	private Rol id_rol;
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Rol rol;
+	
+	
 	
 
 }
