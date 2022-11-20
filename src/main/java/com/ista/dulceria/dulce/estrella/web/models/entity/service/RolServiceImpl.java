@@ -5,43 +5,42 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.ista.dulceria.dulce.estrella.web.models.entity.Persona;
-import com.ista.dulceria.dulce.estrella.web.models.entity.dao.PersonaRepository;
+
+import com.ista.dulceria.dulce.estrella.web.models.entity.Rol;
+import com.ista.dulceria.dulce.estrella.web.models.entity.dao.RolRepository;
 
 
 @Service
-public class PersonaServiceImpl implements PersonaService {
+public class RolServiceImpl implements RolService {
 	
 	@Autowired
-	private PersonaRepository personaRepository;
-	
+    private RolRepository rolRepository;
 
     @Override
-    public List<Persona> findAll() {
+    public List<Rol> findAll() {
         // TODO Auto-generated method stub
-        return (List<Persona>) personaRepository.findAll();
+        return (List<Rol>) rolRepository.findAll();
     }
 
     @Override
-    public Persona save(Persona persona) {
+    public Rol save(Rol rol) {
         // TODO Auto-generated method stub
-        return personaRepository.save(persona);
+        return rolRepository.save(rol);
     }
 
 
     @Override
-    public Persona findById(Long id) {
+    public Rol findById(Long id) {
         // TODO Auto-generated method stub
-        return personaRepository.findById(id).orElse(null);
+        return rolRepository.findById(id).orElse(null);
     }
 
     @Override
     @Transactional
     public void delete(Long id) {
         // TODO Auto-generated method stub
-    	personaRepository.deleteById(id);
+    	rolRepository.deleteById(id);
 
     }
-	
 
 }

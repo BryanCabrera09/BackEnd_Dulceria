@@ -1,7 +1,6 @@
 package com.ista.dulceria.dulce.estrella.web.controller;
 
 import com.ista.dulceria.dulce.estrella.web.models.entity.Empresa;
-import com.ista.dulceria.dulce.estrella.web.models.entity.service.EmpresaService;
 import com.ista.dulceria.dulce.estrella.web.models.entity.service.EmpresaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;

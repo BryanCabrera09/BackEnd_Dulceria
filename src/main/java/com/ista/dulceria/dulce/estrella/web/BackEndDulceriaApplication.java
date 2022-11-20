@@ -26,7 +26,7 @@ public class BackEndDulceriaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-			Usuario usuario = new Usuario();
+			/*Usuario usuario = new Usuario();
 
 			usuario.setCedula("Alex");
 			usuario.setNombres("Soto");
@@ -45,7 +45,7 @@ public class BackEndDulceriaApplication implements CommandLineRunner {
 			usuariosRoles.add(usuarioRol);
 
 			Usuario usuarioGuardado = usuarioService.guardarUsuario(usuario,usuariosRoles);
-			System.out.println(usuarioGuardado.getUsername());
+			System.out.println(usuarioGuardado.getUsername());*/
 	}
 
 }

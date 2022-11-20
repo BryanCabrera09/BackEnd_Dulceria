@@ -34,8 +34,6 @@ public class Persona {
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "persona")
 	private Set<Usuario> usuario = new HashSet<>();
 
-	
-	
 
 	public Persona() {
 		super();
@@ -44,6 +42,7 @@ public class Persona {
 
 	public Persona(String cedula, String nombres, String apellidos, String genero, String correo, String telefono,
 			String direccion, Date fechaNacimiento) {
+		super();
 		this.cedula = cedula;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
@@ -53,7 +52,10 @@ public class Persona {
 		this.direccion = direccion;
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	
+
+
+
+
 
 	public Long getId_persona() {
 		return id_persona;

@@ -21,14 +21,6 @@ public class UsuarioRol {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Rol rol;
 
-	public UsuarioRol() {
-	}
-
-	public UsuarioRol(Usuario usuario, Rol rol) {
-		this.usuario = usuario;
-		this.rol = rol;
-	}
-
 	public Long getId_usuario_rol() {
 		return id_usuario_rol;
 	}

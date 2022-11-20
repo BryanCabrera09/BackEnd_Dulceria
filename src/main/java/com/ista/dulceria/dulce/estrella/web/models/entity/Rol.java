@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Rol")
+@Table(name = "Roles")
 public class Rol {
 	
 	@Id
@@ -28,13 +28,14 @@ public class Rol {
 	private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
 	public Rol() {
+		super();
 	}
 
-	public Rol(String nombre_rol, String descripcion, Boolean estado, Set<UsuarioRol> usuarioRoles) {
+	public Rol(String nombre_rol, String descripcion, Boolean estado) {
+		super();
 		this.nombre_rol = nombre_rol;
 		this.descripcion = descripcion;
 		this.estado = estado;
-		this.usuarioRoles = usuarioRoles;
 	}
 
 	public Long getId_rol() {
@@ -76,4 +77,7 @@ public class Rol {
 	public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
 		this.usuarioRoles = usuarioRoles;
 	}
+
+	
+	
 }
