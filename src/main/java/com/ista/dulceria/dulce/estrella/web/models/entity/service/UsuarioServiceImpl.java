@@ -5,44 +5,56 @@ import com.ista.dulceria.dulce.estrella.web.models.entity.UsuarioRol;
 import com.ista.dulceria.dulce.estrella.web.models.entity.dao.RolRepository;
 import com.ista.dulceria.dulce.estrella.web.models.entity.dao.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
+	
+	
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @Autowired
-    private RolRepository rolRepository;
-
+    // Esto es pa incriptar CONSTRASEÑAS
+    
+    private final PasswordEncoder passwordEncoder;
+    
+    public UsuarioServiceImpl (UsuarioRepository usuarioRepository) {
+    	this.usuarioRepository = usuarioRepository;
+    	this.passwordEncoder = new BCryptPasswordEncoder();
+    }
+    
     @Override
-    public Usuario guardarUsuario(Usuario usuario, Set<UsuarioRol> UsuarioRoles) throws Exception{
-
-        Usuario usuarioLocal= usuarioRepository.findByUsername(usuario.getUsername());
+	public Usuario guardarUsuario(Usuario usuario) {
+		Usuario usuarioLocal= usuarioRepository.findByUsername(usuario.getUsername());
+        
         if(usuarioLocal!=null){
             System.out.println("El usuario ya existe");
-            throw new Exception("El usuario uya esta presente");
         }else{
-            for (UsuarioRol usuarioRol: UsuarioRoles){
-                    rolRepository.save(usuarioRol.getRol());
-            }
-            usuario.getUsuarioRoles().addAll(UsuarioRoles);
-            usuarioLocal = usuarioRepository.save(usuario);
+        	
+        	String encoderPassword = this.passwordEncoder.encode(usuario.getContrasenia());
+            usuario.setContrasenia(encoderPassword);
+        	usuarioLocal = usuarioRepository.save(usuario);
 
         }
         return usuarioLocal;
-    }
-
-    @Override
-    public Usuario obtenerUsuario(String username){
-        return usuarioRepository.findByUsername(username);
-    }
-
+	}
+  
     @Override
     public void eliminarUsuario(Long id_usuario){
         usuarioRepository.deleteById(id_usuario);
     }
+
+
+	
+
+	@Override
+	public Usuario obtenerUsuario(String username) {
+		// TODO Auto-generated method stub
+		return usuarioRepository.findByUsername(username);
+	}
 
 }

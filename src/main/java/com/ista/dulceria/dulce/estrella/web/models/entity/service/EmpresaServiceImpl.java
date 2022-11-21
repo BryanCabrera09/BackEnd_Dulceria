@@ -2,7 +2,6 @@ package com.ista.dulceria.dulce.estrella.web.models.entity.service;
 
 import com.ista.dulceria.dulce.estrella.web.models.entity.Empresa;
 import com.ista.dulceria.dulce.estrella.web.models.entity.dao.EmpresaRepository;
-import com.ista.dulceria.dulce.estrella.web.models.entity.dao.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

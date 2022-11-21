@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import com.ista.dulceria.dulce.estrella.web.models.entity.Persona;
 import com.ista.dulceria.dulce.estrella.web.models.entity.dao.PersonaRepository;
 
@@ -12,27 +13,35 @@ import com.ista.dulceria.dulce.estrella.web.models.entity.dao.PersonaRepository;
 public class PersonaServiceImpl implements PersonaService {
 	
 	@Autowired
-	private PersonaRepository personaDAO;
+	private PersonaRepository personaRepository;
 	
-	@Override
-	public List<Persona> findAllPersona() {
-		return (List<Persona>) personaDAO.findAll();
-	}
 
-	@Override
-	public Persona guardarPersona(Persona persona) {
-		return personaDAO.save(persona);
-	}
+    @Override
+    public List<Persona> findAll() {
+        // TODO Auto-generated method stub
+        return (List<Persona>) personaRepository.findAll();
+    }
 
-	@Override
-	public Persona findByIdPersona(Long id) {
-		return personaDAO.findById(id).orElse(null);
-	}
+    @Override
+    public Persona save(Persona persona) {
+        // TODO Auto-generated method stub
+        return personaRepository.save(persona);
+    }
 
-	@Override
-	public void eliminarPersona(Long id) {
-		this.personaDAO.deleteById(id);
-	}
 
+    @Override
+    public Persona findById(Long id) {
+        // TODO Auto-generated method stub
+        return personaRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Long id) {
+        // TODO Auto-generated method stub
+    	personaRepository.deleteById(id);
+
+    }
+	
 
 }

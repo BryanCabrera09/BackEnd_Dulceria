@@ -16,18 +16,10 @@ public class UsuarioRol {
 	private Long id_usuario_rol;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Usuario usuario;
+	private Usuario id_usuario;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Rol rol;
-
-	public UsuarioRol() {
-	}
-
-	public UsuarioRol(Usuario usuario, Rol rol) {
-		this.usuario = usuario;
-		this.rol = rol;
-	}
 
 	public Long getId_usuario_rol() {
 		return id_usuario_rol;
@@ -38,11 +30,11 @@ public class UsuarioRol {
 	}
 
 	public Usuario getUsuario() {
-		return usuario;
+		return id_usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Usuario id_usuario) {
+		this.id_usuario = id_usuario;
 	}
 
 	public Rol getRol() {

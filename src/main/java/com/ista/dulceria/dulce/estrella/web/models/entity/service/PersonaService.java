@@ -7,12 +7,12 @@ import com.ista.dulceria.dulce.estrella.web.models.entity.Persona;
 
 public interface PersonaService {
 	
-	public List<Persona> findAllPersona();
-	
-	public Persona guardarPersona(Persona persona);
+	public Persona save(Persona persona);
 
-	public Persona findByIdPersona(Long id);
-			
-	public void eliminarPersona(Long id);
+    public List<Persona> findAll();
+
+    public Persona findById(Long id);
+
+    public void delete(Long id);
 
 }

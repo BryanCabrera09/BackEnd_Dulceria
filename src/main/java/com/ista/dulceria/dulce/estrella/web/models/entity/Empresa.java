@@ -69,10 +69,6 @@ public class Empresa {
 	public void setRuc(String ruc) {
 		this.ruc = ruc;
 	}
-
-
-
-
 	
 
 }
