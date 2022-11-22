@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.dulceria.dulce.estrella.web.models.entity.Rol;
+import com.ista.dulceria.dulce.estrella.web.models.entity.UsuarioRol;
 import com.ista.dulceria.dulce.estrella.web.models.entity.dao.RolRepository;
+import com.ista.dulceria.dulce.estrella.web.models.entity.dao.UsuarioRolRepository;
 
 
 @Service
@@ -15,6 +17,9 @@ public class RolServiceImpl implements RolService {
 	
 	@Autowired
     private RolRepository rolRepository;
+	
+	@Autowired
+    private UsuarioRolRepository userRolRepository;
 
     @Override
     public List<Rol> findAll() {
@@ -42,5 +47,11 @@ public class RolServiceImpl implements RolService {
     	rolRepository.deleteById(id);
 
     }
+
+	@Override
+	public UsuarioRol saveRolesUsuario(UsuarioRol userRol) {
+		// TODO Auto-generated method stub
+		return userRolRepository.save(userRol);
+	}
 
 }

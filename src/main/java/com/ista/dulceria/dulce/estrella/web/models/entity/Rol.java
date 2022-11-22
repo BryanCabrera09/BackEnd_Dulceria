@@ -70,13 +70,6 @@ public class Rol {
 		this.estado = estado;
 	}
 
-	public Set<UsuarioRol> getUsuarioRoles() {
-		return usuarioRoles;
-	}
-
-	public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
-		this.usuarioRoles = usuarioRoles;
-	}
 
 	
 	

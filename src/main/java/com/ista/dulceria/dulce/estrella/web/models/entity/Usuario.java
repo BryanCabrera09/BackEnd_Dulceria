@@ -20,8 +20,8 @@ public class Usuario {
 	private Boolean estado;
 
 
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "usuario")
-	private Set<UsuarioRol> usuarioRoles = new HashSet<>();
+	/*@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "id_usuario")
+	private Set<UsuarioRol> usuarioRoles = new HashSet<>();*/
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Persona persona;
@@ -145,7 +145,7 @@ public class Usuario {
 	}
 
 
-
+	/*
 	public Set<UsuarioRol> getUsuarioRoles() {
 		return usuarioRoles;
 	}
@@ -155,7 +155,7 @@ public class Usuario {
 	public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
 		this.usuarioRoles = usuarioRoles;
 	}
-
+	*/
 
 	
 
