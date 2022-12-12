@@ -1,7 +1,5 @@
 package com.ista.dulceria.dulce.estrella.web.models.entity;
 
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.*;
 
